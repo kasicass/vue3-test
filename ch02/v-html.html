@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Vue3</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <template id="my-app">
+            <h2>{{message}}</h2>
+            <h1 v-text="message"></h1>
+            <div v-html="message"></div>
+        </template>
+
+        <script src="../common/vue.global.js"></script>
+        <script>
+            const app = Vue.createApp({
+                template: '#my-app',
+                data() {
+                    return {
+                        message: '<span style="color:red; backgournd: blue;">你好呀</span>'
+                    }
+                }
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>
