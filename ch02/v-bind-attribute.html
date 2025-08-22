@@ -8,6 +8,9 @@
         <template id="my-app">
             <div :[name]="value">v-bind动态绑定属性名称和值</div>
             <div v-bind:[name]="value">v-bind动态绑定属性名称和值</div>
+
+            <div :="info">v-bind动态绑定一个对象</div>
+            <div v-bind="info">v-bind动态绑定一个对象</div>
         </template>
 
         <script src="../common/vue.global.js"></script>
@@ -17,7 +20,12 @@
                 data() {
                     return {
                         name: 'username',
-                        value: 'phay'
+                        value: 'phay',
+                        info: {
+                            name: 'why',
+                            age: 18,
+                            height: 1.88
+                        }
                     }
                 }
             })
