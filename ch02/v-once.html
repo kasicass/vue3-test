@@ -1,0 +1,38 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Vue3</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <template id="my-app">
+            <h2>h2 : {{counter}}</h2>
+            <h3 v-once>h3: {{counter}}</h3>
+            <div v-once>
+                <h4>h4: {{counter}}</h4>
+                <h5>h5: {{counter}}</h5>
+            </div>
+
+            <button @click="increment">+1</button>
+        </template>
+
+        <script src="../common/vue.global.js"></script>
+        <script>
+            const app = Vue.createApp({
+                template: '#my-app',
+                data() {
+                    return {
+                        counter: 100,
+                        message: "Hello Vue.js 3"
+                    }
+                },
+                methods: {
+                    increment() {
+                        this.counter++
+                    }
+                }
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>
