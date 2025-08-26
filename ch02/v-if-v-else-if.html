@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Vue3</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <template id="my-app">
+            <input type="text" v-model="score">
+            <h2 v-if="score >= 90">优秀</h2>
+            <h2 v-else-if="score >= 60">良好</h2>
+            <h2 v-else>优秀</h2>
+        </template>
+
+        <script src="../common/vue.global.js"></script>
+        <script>
+            const app = Vue.createApp({
+                template: '#my-app',
+                data() {
+                    return {
+                        score: 75
+                    }
+                }
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>
