@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Vue3</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <template id="my-app">
+            <h4>1.电影列表</h4>
+            <ul>
+                <li v-for="movie in movies">{{movie}}</li>
+            </ul>
+            <h4>2.电影列表(带index)</h4>
+            <ul>
+                <li v-for="(movie, index) in movies">{{index+1}}.{{movie}}</li>
+            </ul>
+        </template>
+
+        <script src="../common/vue.global.js"></script>
+        <script>
+            const app = Vue.createApp({
+                template: '#my-app',
+                data() {
+                    return {
+                        movies: ['星际穿越', '圆梦巨人', '阿凡达']
+                    }
+                }
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>
