@@ -1,11 +1,28 @@
-<script setup></script>
+<script>
+import Header from './Header.vue'
+import Main from './Main.vue'
+import Footer from './Footer.vue'
+
+export default {
+  components: {
+    Header,
+    Main,
+    Footer,
+  },
+}
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <Header></Header>
+  <Main></Main>
+  <Footer></Footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.header,
+.main,
+.footer {
+  border: 1px solid #999;
+  margin-bottom: 4px;
+}
+</style>
