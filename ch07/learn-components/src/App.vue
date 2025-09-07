@@ -4,6 +4,7 @@ import Main from './Main.vue'
 import Footer from './Footer.vue'
 import NoPropAttribute from './NoPropAttribute.vue'
 import CounterOperation from './CounterOperation.vue'
+import TabControl from './TabControl.vue'
 
 export default {
   components: {
@@ -12,10 +13,15 @@ export default {
     Footer,
     NoPropAttribute,
     CounterOperation,
+    TabControl,
   },
   data() {
     return {
       counter: 0,
+
+      titles: ['衣服', '鞋子', '裤子'],
+      contents: ['衣服页面', '鞋子页面', '裤子页面'],
+      currentIndex: 0,
     }
   },
   methods: {
@@ -29,6 +35,9 @@ export default {
       console.log(name, age)
       this.counter += num
     },
+    titleClick(index) {
+      this.currentIndex = index
+    },
   },
 }
 </script>
@@ -41,6 +50,10 @@ export default {
   <div>
     <h4>当前计数：{{ counter }}</h4>
     <CounterOperation @add="addOne" @sub="subOne" @addN="addNNum"></CounterOperation>
+  </div>
+  <div>
+    <tab-control :titles="titles" @titleClick="titleClick"></tab-control>
+    <h2>{{ contents[currentIndex] }}</h2>
   </div>
 </template>
 
